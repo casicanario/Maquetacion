@@ -1,0 +1,92 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------- */
+/* Contenedor principal: Flexbox en columna para apilar elementos */
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 600px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+/* Contenedores hijos directos */
+.contenedor-principal > * {
+    text-align: center;
+    padding: 10px;
+}
+
+/* ------------------------------------- */
+/* Estilos del header y nav principales */
+.contenedor-principal > header {
+    border: 2px solid lightgreen;
+}
+
+nav {
+    border: 2px solid #D291BC;
+}
+
+/* ------------------------------------- */
+/* Contenedor central: Flexbox en fila para colocar Articulo y Aside uno al lado del otro */
+.contenedor-central {
+    display: flex;
+    flex-direction: row;
+    flex: 1; /* Permite que este contenedor ocupe el espacio restante */
+    gap: 10px;
+}
+
+/* Contenedor del articulo: Estilos y Flexbox interno */
+article {
+    display: flex;
+    flex-direction: column;
+    flex: 3; /* Ocupa 3/4 partes del espacio */
+    border: 2px solid lightblue;
+    gap: 10px;
+    padding: 10px;
+}
+
+article > * {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Elementos del Articulo */
+article > header {
+    border: 2px solid green;
+}
+article > section {
+    border: 2px solid #9966CC;
+    flex: 1;
+}
+article > footer {
+    border: 2px solid yellow;
+}
+
+/* ------------------------------------- */
+/* Contenedor de Asides: Flexbox en columna */
+.contenedor-aside {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Ocupa 1/4 parte del espacio */
+    gap: 10px;
+}
+
+aside {
+    border: 2px solid lightblue;
+    flex: 1; /* Ambos asides ocupan el mismo espacio */
+    text-align: center;
+    padding: 10px;
+}
+
+/* ------------------------------------- */
+/* Pie de página principal */
+.contenedor-principal > footer {
+    border: 2px solid yellow;
+}
