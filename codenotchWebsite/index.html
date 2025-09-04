@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codenotch - Programación y Desarrollo Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo" onclick="showSection('landing')">Codenotch</a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showSection('landing')">Inicio</a></li>
+                <li><a href="#" onclick="showSection('cursos')">Cursos</a></li>
+                <li><a href="#" onclick="showSection('equipo')">Equipo</a></li>
+                <li><a href="#" onclick="showSection('contacto')">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Página Principal (Landing) -->
+    <section id="landing" class="landing active">
+        <div class="hero-content">
+            <h1>Bienvenido a Codenotch</h1>
+            <p>Transforma tu futuro con nuestros cursos de programación y desarrollo web. Aprende de los mejores profesionales y conviértete en el desarrollador que siempre quisiste ser.</p>
+            <a href="#" class="cta-button" onclick="showSection('cursos')">Ver Cursos</a>
+        </div>
+    </section>
+
+    <!-- Página de Cursos -->
+    <section id="cursos" class="section">
+        <h2>Nuestros Cursos</h2>
+        <div class="courses-grid">
+            <div class="course-card">
+                <h3>Full Time Web Developer</h3>
+                <div class="course-details">
+                    <p><strong>Próxima convocatoria:</strong> 15 de Octubre 2025</p>
+                    <p><strong>Precio:</strong> €8,500</p>
+                    <p><strong>Plazas disponibles:</strong> 20</p>
+                </div>
+                <div class="course-description">
+                    <p>Un curso intensivo de 6 meses que te convertirá en un desarrollador web full-stack. Aprenderás JavaScript, React, Node.js, bases de datos y metodologías ágiles.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <h3>Part Time Web Developer</h3>
+                <div class="course-details">
+                    <p><strong>Próxima convocatoria:</strong> 1 de Noviembre 2025</p>
+                    <p><strong>Precio:</strong> €5,200</p>
+                    <p><strong>Plazas disponibles:</strong> 25</p>
+                </div>
+                <div class="course-description">
+                    <p>Perfecto para quienes trabajan o estudian. En 9 meses aprenderás desarrollo web frontend y backend con clases vespertinas y fines de semana.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <h3>Full Time Data Science</h3>
+                <div class="course-details">
+                    <p><strong>Próxima convocatoria:</strong> 22 de Septiembre 2025</p>
+                    <p><strong>Precio:</strong> €9,000</p>
+                    <p><strong>Plazas disponibles:</strong> 15</p>
+                </div>
+                <div class="course-description">
+                    <p>Conviértete en científico de datos con Python, machine learning, estadística y visualización de datos. Incluye proyectos reales con empresas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Página del Equipo -->
+    <section id="equipo" class="section">
+        <h2>Nuestro Equipo</h2>
+        <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 2rem;">
+            Conoce a nuestro equipo docente y de comunicación y marketing
+        </p>
+        
+        <h3 style="text-align: center; color: #667eea; margin: 3rem 0 2rem;">Equipo Docente</h3>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">AS</div>
+                <div class="member-info">
+                    <h3>Ana Sánchez</h3>
+                    <div class="specialty">JavaScript & React</div>
+                    <div class="position">Senior Frontend Developer</div>
+                    <p>Más de 8 años desarrollando aplicaciones web modernas y mentorando nuevos talentos.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-photo">CM</div>
+                <div class="member-info">
+                    <h3>Carlos Martín</h3>
+                    <div class="specialty">Node.js & Databases</div>
+                    <div class="position">Backend Architect</div>
+                    <p>Experto en arquitecturas escalables y bases de datos, con experiencia en startups y grandes corporaciones.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-photo">LR</div>
+                <div class="member-info">
+                    <h3>Laura Rodríguez</h3>
+                    <div class="specialty">Data Science & ML</div>
+                    <div class="position">Data Scientist Lead</div>
+                    <p>Especialista en machine learning e inteligencia artificial con proyectos en diversos sectores.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-photo">DG</div>
+                <div class="member-info">
+                    <h3>David García</h3>
+                    <div class="specialty">DevOps & Cloud</div>
+                    <div class="position">Cloud Solutions Architect</div>
+                    <p>Experto en AWS, Docker y metodologías CI/CD. Ayuda a los estudiantes a entender el despliegue real.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; color: #667eea; margin: 3rem 0 2rem;">Equipo de Comunicación y Marketing</h3>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">MP</div>
+                <div class="member-info">
+                    <h3>María Pérez</h3>
+                    <div class="specialty">Marketing Digital</div>
+                    <div class="position">Marketing Manager</div>
+                    <p>Especialista en estrategias digitales y posicionamiento de marca en el sector educativo.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-photo">JL</div>
+                <div class="member-info">
+                    <h3>Javier López</h3>
+                    <div class="specialty">Comunicación</div>
+                    <div class="position">Communications Lead</div>
+                    <p>Experto en comunicación corporativa y relaciones con medios especializados en tecnología.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Página de Contacto -->
+    <section id="contacto" class="section">
+        <h2>Contacto</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Envíanos un mensaje</h3>
+                <form onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="curso">Curso de interés</label>
+                        <select id="curso" name="curso" style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px;">
+                            <option value="">Selecciona un curso</option>
+                            <option value="fulltime-web">Full Time Web Developer</option>
+                            <option value="parttime-web">Part Time Web Developer</option>
+                            <option value="data-science">Full Time Data Science</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos más sobre tu interés en nuestros cursos..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h3>Información de contacto</h3>
+                <p><strong>Dirección:</strong><br>
+                Calle Innovation Tech, 123<br>
+                28001 Madrid, España</p>
+                
+                <p style="margin-top: 1rem;"><strong>Teléfono:</strong><br>
+                +34 91 123 45 67</p>
+                
+                <p style="margin-top: 1rem;"><strong>Email:</strong><br>
+                info@codenotch.com</p>
+                
+                <p style="margin-top: 1rem;"><strong>Horario de atención:</strong><br>
+                Lunes a Viernes: 9:00 - 18:00<br>
+                Sábados: 10:00 - 14:00</p>
+
+                <div class="social-links">
+                    <h4>Síguenos en redes sociales</h4>
+                    <a href="#">📘 Facebook</a>
+                    <a href="#">📷 Instagram</a>
+                    <a href="#">🐦 Twitter</a>
+                    <a href="#">💼 LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Codenotch. Todos los derechos reservados. | Transformando el futuro digital</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
