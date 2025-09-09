@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header id="header">
+        <nav>
+            <div class="logo">Mi Portafolio</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#tecnologias">Tecnologías</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Página principal -->
+    <section id="inicio">
+        <div class="hero-content">
+            <h1>¡Hola! Soy Fran Márquez</h1>
+            <p>Desarrollador Web en formación</p>
+            <a href="#sobre-mi" class="btn">Conoce más sobre mí</a>
+        </div>
+    </section>
+
+    <!-- Sobre mí -->
+    <section id="sobre-mi">
+        <div class="fade-in">
+            <h2>Sobre mí</h2>
+            <p>Soy un estudiante apasionado de desarrollo web.</p>
+            <p>Mi objetivo es convertirme en un desarrollador full-stack competente, creando aplicaciones web que no solo sean funcionales, sino también visualmente atractivas y fáciles de usar.</p>
+        </div>
+    </section>
+
+    <!-- Tecnologías -->
+    <section id="tecnologias">
+        <div class="fade-in">
+            <h2>Tecnologías que conozco</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon html">HTML</div>
+                    <h3>HTML5</h3>
+                    <p>Estructura y semántica web</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon css">CSS</div>
+                    <h3>CSS3</h3>
+                    <p>Estilos y diseño responsivo</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon js">JS</div>
+                    <h3>JavaScript</h3>
+                    <p>Interactividad y lógica</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon node">NODE</div>
+                    <h3>Node.js</h3>
+                    <p>JavaScript del lado servidor</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon java">JAVA</div>
+                    <h3>Java</h3>
+                    <p>Programación orientada a objetos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos">
+        <div class="fade-in">
+            <h2>Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">🌐</div>
+                    <div class="project-content">
+                        <h3>Sitio Web Corporativo</h3>
+                        <p>Sitio web responsive desarrollado con HTML5, CSS3 y JavaScript. Incluye animaciones suaves y diseño adaptable.</p>
+                        <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript</p>
+                        <p><strong>Repositorio:</strong> <a href="#">GitHub Link</a></p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">📱</div>
+                    <div class="project-content">
+                        <h3>App de Tareas (Próximamente)</h3>
+                        <p>Aplicación de gestión de tareas con interfaz intuitiva. Proyecto en desarrollo utilizando JavaScript vanilla.</p>
+                        <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript</p>
+                        <p><strong>Estado:</strong> En desarrollo</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">🎮</div>
+                    <div class="project-content">
+                        <h3>Juego Web (Planificado)</h3>
+                        <p>Juego interactivo desarrollado con JavaScript puro. Incluirá mecánicas básicas y efectos visuales.</p>
+                        <p><strong>Tecnologías:</strong> HTML5 Canvas, CSS, JavaScript</p>
+                        <p><strong>Estado:</strong> En desarrollo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <div class="fade-in">
+            <h2>Contáctame</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+        <p>Desarrollado con ❤️ usando HTML, CSS y JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
