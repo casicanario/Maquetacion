@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fafafa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 935px;
+            width: 100%;
+            gap: 32px;
+        }
+
+        .phone-mockup {
+            flex: 1;
+            max-width: 380px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-image {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .phone-frame {
+            width: 100%;
+            height: auto;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 676"><rect x="20" y="20" width="340" height="636" rx="30" fill="%23000" stroke="%23000" stroke-width="2"/><rect x="30" y="80" width="320" height="568" rx="10" fill="%23fff"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .phone-content {
+            position: absolute;
+            top: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 84%;
+            height: 76%;
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .instagram-ui {
+            flex: 1;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 16px;
+        }
+
+        .ui-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .instagram-logo-small {
+            font-family: 'Billabong', cursive;
+            font-size: 24px;
+            font-weight: normal;
+            color: #262626;
+        }
+
+        .ui-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-top: 20px;
+        }
+
+        .story-preview, .post-preview {
+            background: #f8f9fa;
+            height: 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 12px;
+        }
+
+        .story-circle, .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #833ab4, #fd1d1d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .story-info, .post-info {
+            flex: 1;
+        }
+
+        .story-name, .username {
+            font-weight: 600;
+            font-size: 12px;
+            color: #262626;
+        }
+
+        .story-time, .post-time {
+            font-size: 10px;
+            color: #8e8e8e;
+        }
+
+        .login-form-container {
+            flex: 1;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .login-box {
+            background: white;
+            border: 1px solid #dbdbdb;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .instagram-logo {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 51"><path d="M0 0h175v51H0z" fill="none"/><text x="87.5" y="35" text-anchor="middle" font-family="serif" font-size="28" font-weight="300" fill="%23262626">Instagram</text></svg>') no-repeat center;
+            width: 175px;
+            height: 51px;
+            background-size: contain;
+            margin-bottom: 8px;
+        }
+
+        .login-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 9px 8px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background: #fafafa;
+            font-size: 14px;
+            color: #262626;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: #a8a8a8;
+            background: white;
+        }
+
+        .form-input::placeholder {
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 8px 24px;
+            background: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            opacity: 0.3;
+            transition: opacity 0.2s;
+        }
+
+        .login-button.active {
+            opacity: 1;
+        }
+
+        .login-button:hover.active {
+            background: #1877f2;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 18px 0 24px;
+            color: #8e8e8e;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #dbdbdb;
+        }
+
+        .divider::before {
+            margin-right: 18px;
+        }
+
+        .divider::after {
+            margin-left: 18px;
+        }
+
+        .facebook-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #385185;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 24px;
+        }
+
+        .facebook-icon {
+            width: 16px;
+            height: 16px;
+            background: #385185;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .forgot-password {
+            color: #00376b;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .signup-box {
+            background: white;
+            border: 1px solid #dbdbdb;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .signup-text {
+            font-size: 14px;
+            color: #262626;
+        }
+
+        .signup-link {
+            color: #0095f6;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+
+        .app-download {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .app-text {
+            font-size: 14px;
+            color: #262626;
+            margin-bottom: 16px;
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .app-button {
+            height: 40px;
+            background: #000;
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 875px) {
+            .login-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .phone-mockup {
+                display: none;
+            }
+
+            .login-form-container {
+                max-width: 100%;
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .login-box {
+                border: none;
+                padding: 24px;
+            }
+
+            .signup-box {
+                border: none;
+                border-top: 1px solid #dbdbdb;
+            }
+        }
+
+        /* Animaciones sutiles */
+        .login-box, .signup-box {
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .border-debug {
+            border: 2px solid red !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Phone Mockup - Desktop only -->
+        <div class="phone-mockup">
+            <div class="phone-image">
+                <div class="phone-frame">
+                    <div class="phone-content">
+                        <div class="instagram-ui">
+                            <div class="ui-header">
+                                <div class="instagram-logo-small">Instagram</div>
+                                <div style="display: flex; gap: 12px;">
+                                    <div style="width: 20px; height: 20px; background: #dbdbdb; border-radius: 50%;"></div>
+                                    <div style="width: 20px; height: 20px; background: #dbdbdb; border-radius: 50%;"></div>
+                                </div>
+                            </div>
+                            <div class="ui-content">
+                                <div class="story-preview">
+                                    <div class="story-circle">U1</div>
+                                    <div class="story-info">
+                                        <div class="story-name">usuario_ejemplo</div>
+                                        <div class="story-time">hace 2 h</div>
+                                    </div>
+                                </div>
+                                <div class="post-preview">
+                                    <div class="profile-pic">U2</div>
+                                    <div class="post-info">
+                                        <div class="username">otro_usuario</div>
+                                        <div class="post-time">hace 5 h</div>
+                                    </div>
+                                </div>
+                                <div class="story-preview">
+                                    <div class="story-circle">U3</div>
+                                    <div class="story-info">
+                                        <div class="story-name">fotografo_pro</div>
+                                        <div class="story-time">hace 1 d</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form-container">
+            <div class="login-box">
+                <div class="instagram-logo"></div>
+                
+                <form class="login-form" id="loginForm">
+                    <input type="text" class="form-input" placeholder="Teléfono, usuario o correo electrónico" id="username" autocomplete="username">
+                    <input type="password" class="form-input" placeholder="Contraseña" id="password" autocomplete="current-password">
+                    <button type="submit" class="login-button" id="loginButton">Iniciar sesión</button>
+                </form>
+
+                <div class="divider">O</div>
+
+                <a href="#" class="facebook-login">
+                    <div class="facebook-icon">f</div>
+                    Iniciar sesión con Facebook
+                </a>
+
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <div class="signup-box">
+                <span class="signup-text">
+                    ¿No tienes una cuenta? <a href="#" class="signup-link">Regístrate</a>
+                </span>
+            </div>
+
+            <div class="app-download">
+                <p class="app-text">Descarga la aplicación.</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        📱 App Store
+                    </a>
+                    <a href="#" class="app-button">
+                        🤖 Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidad interactiva del formulario
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginButton = document.getElementById('loginButton');
+        const loginForm = document.getElementById('loginForm');
+
+        // Función para verificar si el botón debe estar activo
+        function checkFormValidity() {
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+            
+            if (username.length > 0 && password.length > 0) {
+                loginButton.classList.add('active');
+            } else {
+                loginButton.classList.remove('active');
+            }
+        }
+
+        // Event listeners para inputs
+        usernameInput.addEventListener('input', checkFormValidity);
+        passwordInput.addEventListener('input', checkFormValidity);
+
+        // Manejo del formulario
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+            
+            if (username && password) {
+                // Simular proceso de login
+                loginButton.textContent = 'Iniciando sesión...';
+                loginButton.disabled = true;
+                
+                setTimeout(() => {
+                    alert('¡Login simulado exitoso!\nUsuario: ' + username);
+                    loginButton.textContent = 'Iniciar sesión';
+                    loginButton.disabled = false;
+                }, 1500);
+            }
+        });
+
+        // Funcionalidad para inspección con Dev Tools
+        function toggleBorderDebug() {
+            const elements = document.querySelectorAll('*');
+            elements.forEach(el => {
+                el.classList.toggle('border-debug');
+            });
+        }
+
+        // Disponible desde consola del navegador
+        window.debugBorders = toggleBorderDebug;
+        
+        console.log('🔍 Instagram Login Clone cargado correctamente!');
+        console.log('💡 Tip: Ejecuta debugBorders() en la consola para ver los bordes de todos los elementos');
+        console.log('📱 Responsive: El diseño se adapta automáticamente a diferentes tamaños de pantalla');
+    </script>
+</body>
+</html>
