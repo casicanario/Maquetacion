@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 1 - Maquetación Bootstrap</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .section {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .january { background-color: #4285F4; }
+        .february { background-color: #34A853; }
+        .march { background-color: #EA4335; }
+        .april { background-color: #FBBC04; color: black; }
+        .may { background-color: #4285F4; }
+        .june { background-color: #FBBC04; color: black; }
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            color: #4285F4;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>Reto 1 - Maquetación Bootstrap</h1>
+        
+        <div class="row">
+            <!-- Primera fila -->
+            <div class="col-md-6">
+                <div class="section january">
+                    January
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="section april">
+                    April
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Segunda fila -->
+            <div class="col-md-4">
+                <div class="section march">
+                    March
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="section june">
+                    June
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Tercera fila -->
+            <div class="col-md-5">
+                <div class="section february">
+                    February
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="section may">
+                    May
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
